@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 2.12 -->
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkWindow" id="numWindow">
+    <property name="window_position">center-always</property>
+    <property name="default_width">400</property>
+    <property name="default_height">500</property>
+    <signal name="delete_event" handler="numbers_term"/>
+    <child>
+      <object class="GtkHBox" id="hbox1">
+        <signal name="unrealize" handler="numbers_actEnd"/>
+        <child>
+          <object class="GtkVBox" id="menuView">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkLabel" id="lbTitle">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">New Game</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="padding">5</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lbSubt">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Choose difficulty</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="padding">5</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkHButtonBox" id="hbuttonbox1">
+                <property name="visible">True</property>
+                <property name="homogeneous">True</property>
+                <property name="layout_style">center</property>
+                <child>
+                  <object class="GtkButton" id="btnEasy">
+                    <property name="label" translatable="yes">_Easy</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="use_underline">True</property>
+                    <signal name="clicked" handler="numbers_chDiff" object="easy"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btnMed">
+                    <property name="label" translatable="yes">_Medium</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="use_underline">True</property>
+                    <signal name="clicked" handler="numbers_chDiff" object="medium"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btnHard">
+                    <property name="label" translatable="yes">_Hard</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="use_underline">True</property>
+                    <signal name="clicked" handler="numbers_chDiff" object="hard"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btnScore">
+                    <property name="label" translatable="yes">_Score</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="relief">half</property>
+                    <property name="use_underline">True</property>
+                    <signal name="clicked" handler="showScore" object="menuView"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkVBox" id="gameView">
+            <property name="no_show_all">True</property>
+            <child>
+              <object class="GtkHBox" id="hbox2">
+                <property name="visible">True</property>
+                <child>
+                  <object class="GtkLabel" id="lbMsg">
+                    <property name="visible">True</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                  <packing>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkHBox" id="lifeBox">
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkLabel" id="lbLife0">
+                        <property name="visible">True</property>
+                        <property name="label">☺</property>
+                      </object>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbLife1">
+                        <property name="visible">True</property>
+                        <property name="label">☺</property>
+                      </object>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbLife2">
+                        <property name="visible">True</property>
+                        <property name="label">☺</property>
+                      </object>
+                      <packing>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="pack_type">end</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkHBox" id="hbox3">
+                <property name="visible">True</property>
+                <property name="homogeneous">True</property>
+                <child>
+                  <object class="GtkLabel" id="lbNum1">
+                    <property name="visible">True</property>
+                    <property name="label">0</property>
+                  </object>
+                  <packing>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="lbSign">
+                    <property name="visible">True</property>
+                    <property name="label">
+</property>
+                  </object>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="lbNum2">
+                    <property name="visible">True</property>
+                    <property name="label">0</property>
+                  </object>
+                  <packing>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="lbEqual">
+                    <property name="visible">True</property>
+                    <property name="label">=</property>
+                  </object>
+                  <packing>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="txtRes">
+                    <property name="visible">True</property>
+                    <property name="max_length">3</property>
+                    <property name="invisible_char">•</property>
+                    <property name="activates_default">True</property>
+                    <property name="width_chars">2</property>
+                    <property name="caps_lock_warning">False</property>
+                    <signal name="activate" handler="numbers_txtActivate"/>
+                  </object>
+                  <packing>
+                    <property name="position">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="imgCheck">
+                    <property name="visible">True</property>
+                    <property name="pixel_size">56</property>
+                  </object>
+                  <packing>
+                    <property name="position">5</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="padding">6</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkVBox" id="vbox2">
+                <property name="visible">True</property>
+                <child>
+                  <object class="GtkAlignment" id="alignment1">
+                    <property name="visible">True</property>
+                    <property name="xscale">0.5</property>
+                    <property name="yscale">0.10000000149011612</property>
+                    <child>
+                      <object class="GtkProgressBar" id="progressBar">
+                        <property name="visible">True</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="padding">10</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkHBox" id="hbox4">
+                    <property name="height_request">50</property>
+                    <property name="visible">True</property>
+                    <property name="homogeneous">True</property>
+                    <child>
+                      <object class="GtkButton" id="btnNext">
+                        <property name="label" translatable="yes">_Next</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="border_width">4</property>
+                        <property name="use_underline">True</property>
+                        <signal name="clicked" handler="numbers_oper"/>
+                      </object>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btnCalc">
+                        <property name="label" translatable="yes">_Calculate</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="can_default">True</property>
+                        <property name="has_default">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="border_width">4</property>
+                        <property name="use_underline">True</property>
+                        <signal name="clicked" handler="numbers_calcOp"/>
+                      </object>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkVBox" id="scoreView">
+            <property name="no_show_all">True</property>
+            <child>
+              <object class="GtkVBox" id="scoreMain">
+                <property name="visible">True</property>
+                <child>
+                  <object class="GtkLabel" id="lbScore">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Score</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkTreeView" id="scoreList">
+                    <property name="visible">True</property>
+                    <property name="rules_hint">True</property>
+                  </object>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btnScMainOk">
+                    <property name="label" translatable="yes">Ok</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="can_default">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="border_width">9</property>
+                    <property name="use_underline">True</property>
+                    <signal name="clicked" handler="numbers_setScore"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkVBox" id="nameView">
+                <property name="visible">True</property>
+                <child>
+                  <object class="GtkLabel" id="lbPlayer">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Write Your Name</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="txtPlayer">
+                    <property name="visible">True</property>
+                    <property name="invisible_char">•</property>
+                  </object>
+                  <packing>
+                    <property name="fill">False</property>
+                    <property name="padding">5</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btnScoreOk">
+                    <property name="label" translatable="yes">_Ok</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="border_width">9</property>
+                    <property name="use_underline">True</property>
+                    <signal name="clicked" handler="numbers_savePlayer"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkAction" id="easy"/>
+  <object class="GtkAction" id="medium"/>
+  <object class="GtkAction" id="hard"/>
+</interface>

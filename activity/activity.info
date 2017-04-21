@@ -1,0 +1,10 @@
+[Activity]
+name = MathMe
+activity_version = 1
+service_name = mx.ipn.esimez.guslez.MathMe
+class = mathme.MathMe
+exec = sugar-launch mx.ipn.esimez.guslez.MathMe
+icon = activity-mathme
+license = GPLv3+
+show_launcher = yes
+

@@ -1,0 +1,110 @@
+# MathMe Activity for Sugar
+# Copyright (C) 2011, Hiram Jeronimo Perez <worg@linuxmail.org>.
+# This file is distributed under the same license as the MathMe Activity package.
+# Hiram Jeronimo Perez <worg@linuxmail.org> 2011
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-03-19 17:47-0600\n"
+"PO-Revision-Date: 2011-03-14 05:30-0600\n"
+"Last-Translator: Hiram Jeronimo Perez <worg@linuxmail.org>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: mynum.py:143
+msgid "Insert numbers, not letters"
+msgstr "Escribe números, no letras"
+
+#: mynum.py:188
+msgid "Type the result, then press calculate"
+msgstr "Escribe el resultado y presiona calcular"
+
+#: mynum.py:201
+msgid "Easy"
+msgstr "Fácil"
+
+#: mynum.py:205 mynum.py:206
+msgid "Medium"
+msgstr "Medio"
+
+#: mynum.py:210
+msgid "Hard"
+msgstr "Difícil"
+
+#: mynum.py:255
+msgid "Great!"
+msgstr "¡Muy Bien!"
+
+#: mynum.py:259 mynum.py:261
+msgid "The result is:"
+msgstr "El resultado es:"
+
+#: mynum.py:259
+msgid "Game Over"
+msgstr "Fin del juego"
+
+#: mynum.py:308
+msgid "New Game"
+msgstr "Nuevo Juego"
+
+#: mynum.py:310
+msgid "Choose difficulty"
+msgstr "Elije la dificultad"
+
+#: mynum.py:312
+msgid "_Easy"
+msgstr "_Fácil"
+
+#: mynum.py:313
+msgid "_Medium"
+msgstr "_Medio"
+
+#: mynum.py:314
+msgid "_Hard"
+msgstr "_Difícil"
+
+#: mynum.py:315
+msgid "_Next"
+msgstr "_Siguiente"
+
+#: mynum.py:316
+msgid "_Calculate"
+msgstr "_Calcular"
+
+#: mynum.py:317
+msgid "_Score"
+msgstr "_Puntuación"
+
+#: mynum.py:318
+msgid "Ok"
+msgstr "A_ceptar"
+
+#: mynum.py:319
+msgid "_Ok"
+msgstr "_Aceptar"
+
+#: mynum.py:320 mynum.py:354
+msgid "Score"
+msgstr "Puntuación"
+
+#: mynum.py:322
+msgid "Write Your Name"
+msgstr "Escribe tu nombre"
+
+#: mynum.py:354
+msgid "Player Name"
+msgstr "Jugador"
+
+#: mynum.py:354
+msgid "Rounds"
+msgstr "Operaciones hechas"
+
+#: mynum.py:354
+msgid "Difficutly"
+msgstr "Dificultad"

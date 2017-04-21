@@ -1,0 +1,13 @@
+setup.py
+mathme.py
+mynum.py
+num.ui
+icons/face-laugh.png
+icons/face-sad.png
+activity/activity-mathme.svg
+activity/activity.info
+po/MathMe.pot
+po/es.po
+po/es.mo
+locale/es/activity.linfo
+locale/es/LC_MESSAGES/mx.ipn.esimez.guslez.MathMe.mo
